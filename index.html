@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Yeseva+One&family=Bitter:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Oswald:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script src="image-slot.js"></script>
+<style>
+  html, body { margin: 0; padding: 0; }
+  image-slot { display: block; }
+</style>
+</helmet>
+<div style="width: 100%; overflow-x: hidden; background: #F4E8D0; color: #40301F; font-family: 'Bitter', Georgia, serif; -webkit-font-smoothing: antialiased;">
+
+  <template id="__bundler_thumbnail"><svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><rect width="100" height="100" fill="#3A2818"/><circle cx="50" cy="40" r="15" fill="#DA8A34"/><rect x="18" y="70" width="64" height="5" rx="2.5" fill="#6E7A31"/><text x="50" y="63" font-family="Georgia, serif" font-size="15" fill="#F1DBB0" text-anchor="middle">W&amp;W</text></svg></template>
+
+  <!-- ============ HERO ============ -->
+  <sc-if value="{{ heroCentered }}" hint-placeholder-val="{{ false }}">
+  <section data-screen-label="Hero" style="position: relative; width: 100%; height: 100vh; min-height: 680px; overflow: hidden; background: #2A1D12;">
+    <image-slot id="wwHero" src="uploads/IMG_3547.JPG" style="position: absolute; inset: 0; width: 100%; height: 100%; filter: sepia(0.2) saturate(0.94) contrast(1.03) brightness(0.96);" fit="cover" placeholder="SURFING PHOTO — full bleed"></image-slot>
+    <div style="position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(42,29,18,0.28) 0%, rgba(42,29,18,0.05) 38%, rgba(42,29,18,0.55) 100%);"></div>
+    <sc-if value="{{ showSun }}" hint-placeholder-val="{{ true }}">
+    <div style="position: absolute; top: 12%; left: 50%; transform: translateX(-50%); width: 220px; height: 220px; border-radius: 50%; background: radial-gradient(circle at 50% 45%, #E7B84D 0%, #DA8A34 45%, #C6592C 100%); box-shadow: 0 0 90px 30px rgba(218,138,52,0.35);"></div>
+    </sc-if>
+    <div style="position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 0 32px;">
+      <div style="font-family: 'Oswald', sans-serif; text-transform: uppercase; letter-spacing: 0.42em; font-weight: 400; font-size: 15px; color: #F1DFBC; margin-bottom: 22px; padding-left: 0.42em;">Banh Pho Surf Shop · Nantucket · Summer 2026</div>
+      <h1 style="font-family: 'Yeseva One', serif; font-weight: 400; color: #F7ECD2; font-size: clamp(52px, 9vw, 128px); line-height: 0.98; margin: 0; text-shadow: 0 2px 30px rgba(0,0,0,0.35);">Wood, Water<br>&amp; Waves</h1>
+      <p style="font-family: 'Bitter', serif; font-style: italic; font-size: clamp(18px, 2.3vw, 26px); color: #EFE0C0; max-width: 620px; margin: 26px 0 0; line-height: 1.5;">A wooden surfboard, grown from an island tree, built in the open.</p>
+    </div>
+    <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 14px; background: repeating-linear-gradient(90deg, #C6592C 0 56px, #D2982E 56px 112px, #6E7A31 112px 168px, #3A2818 168px 224px);"></div>
+  </section>
+  </sc-if>
+
+  <sc-if value="{{ heroLower }}" hint-placeholder-val="{{ true }}">
+  <section data-screen-label="Hero" style="position: relative; width: 100%; height: 100vh; min-height: 680px; overflow: hidden; background: #2A1D12;">
+    <image-slot id="wwHero" src="uploads/IMG_3547.JPG" style="position: absolute; inset: 0; width: 100%; height: 100%; filter: sepia(0.2) saturate(0.94) contrast(1.03) brightness(0.95);" fit="cover" placeholder="SURFING PHOTO — full bleed"></image-slot>
+    <div style="position: absolute; inset: 0; background: linear-gradient(to top, rgba(30,20,12,0.82) 0%, rgba(30,20,12,0.15) 46%, rgba(30,20,12,0.35) 100%);"></div>
+    <sc-if value="{{ showSun }}" hint-placeholder-val="{{ true }}">
+    <div style="position: absolute; top: 10%; right: 10%; width: 160px; height: 160px; border-radius: 50%; background: radial-gradient(circle at 50% 45%, #E7B84D 0%, #DA8A34 50%, #C6592C 100%); box-shadow: 0 0 70px 24px rgba(218,138,52,0.3);"></div>
+    </sc-if>
+    <div style="position: absolute; left: 0; bottom: 54px; width: 100%; padding: 0 clamp(28px, 7vw, 110px);">
+      <div style="font-family: 'Oswald', sans-serif; text-transform: uppercase; letter-spacing: 0.4em; font-weight: 400; font-size: 14px; color: #EBC77A; margin-bottom: 18px; padding-left: 0.4em;">Banh Pho Surf Shop · Nantucket · Summer 2026</div>
+      <h1 style="font-family: 'Yeseva One', serif; font-weight: 400; color: #F7ECD2; font-size: clamp(48px, 8.5vw, 120px); line-height: 0.96; margin: 0; max-width: 12ch;">Wood, Water &amp; Waves</h1>
+      <p style="font-family: 'Bitter', serif; font-style: italic; font-size: clamp(18px, 2.3vw, 26px); color: #EFE0C0; max-width: 560px; margin: 22px 0 0; line-height: 1.5;">A wooden surfboard, grown from an island tree, built in the open.</p>
+    </div>
+    <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 14px; background: repeating-linear-gradient(90deg, #C6592C 0 56px, #D2982E 56px 112px, #6E7A31 112px 168px, #3A2818 168px 224px);"></div>
+  </section>
+  </sc-if>
+
+  <sc-if value="{{ heroFramed }}" hint-placeholder-val="{{ false }}">
+  <section data-screen-label="Hero" style="position: relative; width: 100%; min-height: 100vh; background: #EFE0C4; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 48px clamp(20px, 5vw, 72px); box-sizing: border-box;">
+    <sc-if value="{{ showSun }}" hint-placeholder-val="{{ true }}">
+    <div style="width: 96px; height: 96px; border-radius: 50%; background: radial-gradient(circle at 50% 45%, #E7B84D 0%, #DA8A34 50%, #C6592C 100%); margin-bottom: 26px;"></div>
+    </sc-if>
+    <div style="font-family: 'Oswald', sans-serif; text-transform: uppercase; letter-spacing: 0.4em; font-weight: 400; font-size: 14px; color: #A8431F; margin-bottom: 16px; padding-left: 0.4em; text-align: center;">Banh Pho Surf Shop · Nantucket · Summer 2026</div>
+    <h1 style="font-family: 'Yeseva One', serif; font-weight: 400; color: #3A2818; font-size: clamp(44px, 7.5vw, 104px); line-height: 0.98; margin: 0 0 12px; text-align: center;">Wood, Water &amp; Waves</h1>
+    <p style="font-family: 'Bitter', serif; font-style: italic; font-size: clamp(17px, 2.1vw, 24px); color: #6B5334; max-width: 560px; margin: 0 0 30px; line-height: 1.5; text-align: center;">A wooden surfboard, grown from an island tree, built in the open.</p>
+    <div style="width: 100%; max-width: 1120px; padding: 12px; background: repeating-linear-gradient(90deg, #C6592C 0 40px, #D2982E 40px 80px, #6E7A31 80px 120px, #3A2818 120px 160px); border-radius: 12px;">
+      <image-slot id="wwHero" src="uploads/IMG_3547.JPG" style="width: 100%; height: min(58vh, 560px); filter: sepia(0.2) saturate(0.94) contrast(1.03);" fit="cover" radius="6" placeholder="SURFING PHOTO"></image-slot>
+    </div>
+  </section>
+  </sc-if>
+
+  <!-- ============ INTRO ============ -->
+  <section style="max-width: 900px; margin: 0 auto; padding: clamp(72px, 10vw, 128px) 28px clamp(48px, 6vw, 80px);">
+    <div style="font-family: 'Oswald', sans-serif; text-transform: uppercase; letter-spacing: 0.34em; font-weight: 500; font-size: 13px; color: #A8431F; margin-bottom: 26px;">One Summer · One Board · One Tree</div>
+    <p style="font-family: 'Yeseva One', serif; font-size: clamp(26px, 4vw, 46px); line-height: 1.3; color: #3A2818; margin: 0 0 34px;">One summer. One board. Grown from a single Nantucket tree and built in the open air, from soil to surf.</p>
+    <p style="font-size: clamp(16px, 1.5vw, 19px); line-height: 1.72; color: #5C462E; margin: 0;">The board is shaped by <strong style="font-weight: 600;">Rich Blundell</strong> — co-founder and former chief designer and builder at Grain Surfboards — using an innovative new <em>Strip and Feather</em> method that refines the technique he pioneered. Over the season, the build becomes a gathering place: a slow, public craft that draws watermen, neighbors, and anyone curious enough to wander in off Cambridge Street.</p>
+  </section>
+
+  <!-- ============ FULL-WIDTH: CEDAR LOG ============ -->
+  <figure style="margin: 0; width: 100%;">
+    <image-slot id="wwLog" src="uploads/IMG_2584.jpeg" style="width: 100%; height: min(72vh, 720px); filter: sepia(0.2) saturate(0.94) contrast(1.03);" fit="cover" radius="0" placeholder="CEDAR LOG — full width"></image-slot>
+    <figcaption style="text-align: center; font-family: 'Bitter', serif; font-style: italic; font-size: clamp(16px, 1.6vw, 20px); color: #7A6144; padding: 20px 24px 0;">It begins with one island tree.</figcaption>
+  </figure>
+
+  <!-- ============ POETIC BAND ============ -->
+  <section style="width: 100%; background: #3A2818; padding: clamp(80px, 11vw, 150px) 28px; margin-top: clamp(56px, 7vw, 96px);">
+    <p style="max-width: 900px; margin: 0 auto; text-align: center; font-family: 'Yeseva One', serif; color: #F1DBB0; font-size: clamp(24px, 3.6vw, 44px); line-height: 1.5;">The soil that fed it. The rain that swelled its grain.<br>The water it will ride. The wave that is older than memory.<br><span style="color: #E39B4A;">One board, made from all of it.</span></p>
+  </section>
+
+  <!-- ============ TWO-PHOTO: GRAIN / PLANING ============ -->
+  <section style="max-width: 1120px; margin: clamp(64px, 8vw, 110px) auto 0; padding: 0 28px; display: grid; grid-template-columns: 1fr 1fr; gap: 22px;">
+    <image-slot id="wwGrain" src="uploads/IMG_2611.jpeg" style="width: 100%; height: 440px; filter: sepia(0.2) saturate(0.94) contrast(1.03);" fit="cover" radius="10" placeholder="PLANK GRAIN"></image-slot>
+    <image-slot id="wwPlane" src="uploads/IMG_2886.jpeg" style="width: 100%; height: 440px; filter: sepia(0.2) saturate(0.94) contrast(1.03);" fit="cover" radius="10" placeholder="HAND PLANING"></image-slot>
+  </section>
+
+  <!-- ============ THE BUILD ============ -->
+  <section style="max-width: 760px; margin: 0 auto; padding: clamp(56px, 7vw, 96px) 28px clamp(40px, 5vw, 64px); text-align: center;">
+    <div style="font-family: 'Oswald', sans-serif; text-transform: uppercase; letter-spacing: 0.34em; font-weight: 500; font-size: 13px; color: #6E7A31; margin-bottom: 22px;">The Build</div>
+    <h2 style="font-family: 'Yeseva One', serif; font-weight: 400; font-size: clamp(30px, 4.6vw, 54px); line-height: 1.12; color: #3A2818; margin: 0 0 24px;">Cut, shaped, and finished entirely by hand.</h2>
+    <p style="font-size: clamp(16px, 1.5vw, 19px); line-height: 1.72; color: #5C462E; margin: 0;">No molds, no shortcuts. The log is milled into strips, feathered along their edges for a seamless glue-up, and worked over the frame plank by plank until the hull takes its shape. What emerges is hollow, light, and strong — a board that carries the whole story of the tree it came from.</p>
+  </section>
+
+  <!-- ============ THREE-PHOTO: FRAME / STRIPS / FIN ============ -->
+  <section style="max-width: 1200px; margin: 0 auto; padding: 0 28px; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 18px;">
+    <image-slot id="wwFrame" src="uploads/IMG_3227.JPG" style="width: 100%; height: 360px; filter: sepia(0.2) saturate(0.94) contrast(1.03);" fit="cover" radius="10" placeholder="FRAME"></image-slot>
+    <image-slot id="wwClamp" src="uploads/IMG_3228.JPG" style="width: 100%; height: 360px; filter: sepia(0.2) saturate(0.94) contrast(1.03);" fit="cover" radius="10" placeholder="CLAMPED STRIPS"></image-slot>
+    <image-slot id="wwFin" src="uploads/IMG_0752.JPG" style="width: 100%; height: 360px; filter: sepia(0.2) saturate(0.94) contrast(1.03);" fit="cover" radius="10" placeholder="SUNBURST FIN"></image-slot>
+  </section>
+
+  <!-- ============ BUILD GALLERY WALL ============ -->
+  <section style="max-width: 1280px; margin: clamp(56px, 7vw, 96px) auto 0; padding: 0 28px;">
+    <div style="text-align: center; margin-bottom: 34px;">
+      <div style="font-family: 'Oswald', sans-serif; text-transform: uppercase; letter-spacing: 0.34em; font-weight: 500; font-size: 13px; color: #A8431F; margin-bottom: 14px;">Frame by Frame</div>
+      <h2 style="font-family: 'Yeseva One', serif; font-weight: 400; font-size: clamp(26px, 3.6vw, 42px); line-height: 1.14; color: #3A2818; margin: 0;">A summer of shavings and sawdust.</h2>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 14px;">
+      <image-slot id="wwG1" src="uploads/RichwithWood.jpg" style="width: 100%; height: 220px; filter: sepia(0.2) saturate(0.94) contrast(1.03);" fit="cover" radius="8" placeholder="build"></image-slot>
+      <image-slot id="wwG2" src="uploads/IMG_1150.JPG" style="width: 100%; height: 220px; filter: sepia(0.2) saturate(0.94) contrast(1.03);" fit="cover" radius="8" placeholder="build"></image-slot>
+      <image-slot id="wwG3" src="uploads/IMG_2894.jpeg" style="width: 100%; height: 220px; filter: sepia(0.2) saturate(0.94) contrast(1.03);" fit="cover" radius="8" placeholder="build"></image-slot>
+      <image-slot id="wwG4" src="uploads/IMG_1151.JPG" style="width: 100%; height: 220px; filter: sepia(0.2) saturate(0.94) contrast(1.03);" fit="cover" radius="8" placeholder="build"></image-slot>
+      <image-slot id="wwG5" src="uploads/IMG_2915.jpeg" style="width: 100%; height: 220px; filter: sepia(0.2) saturate(0.94) contrast(1.03);" fit="cover" radius="8" placeholder="build"></image-slot>
+      <image-slot id="wwG7" src="uploads/IMG_3207.JPG" style="width: 100%; height: 220px; filter: sepia(0.2) saturate(0.94) contrast(1.03);" fit="cover" radius="8" placeholder="build"></image-slot>
+      <image-slot id="wwG8" src="uploads/SGMV_by_RB_Planesboard.jpg" style="width: 100%; height: 220px; filter: sepia(0.2) saturate(0.94) contrast(1.03);" fit="cover" radius="8" placeholder="build"></image-slot>
+      <image-slot id="wwG9" src="uploads/Rich%20Wooden%20Surfboards.jpg" style="width: 100%; height: 220px; filter: sepia(0.2) saturate(0.94) contrast(1.03);" fit="cover" radius="8" placeholder="build"></image-slot>
+      <image-slot id="wwG10" src="uploads/SGMV_by_RB_Sandingboard.jpg" style="width: 100%; height: 220px; filter: sepia(0.2) saturate(0.94) contrast(1.03);" fit="cover" radius="8" placeholder="build"></image-slot>
+      <image-slot id="wwG12" src="uploads/IMG_7781.jpeg" style="width: 100%; height: 220px; filter: sepia(0.2) saturate(0.94) contrast(1.03);" fit="cover" radius="8" placeholder="build"></image-slot>
+      <image-slot id="wwG13" src="uploads/KeyWest_Surfshop.jpg" style="width: 100%; height: 220px; filter: sepia(0.2) saturate(0.94) contrast(1.03);" fit="cover" radius="8" placeholder="build"></image-slot>
+      <image-slot id="wwG14" src="uploads/IMG_3363.JPG" style="width: 100%; height: 220px; filter: sepia(0.2) saturate(0.94) contrast(1.03);" fit="cover" radius="8" placeholder="build"></image-slot>
+      <image-slot id="wwG15" src="uploads/blundell_rich_wingtail_wood.jpg" style="width: 100%; height: 220px; filter: sepia(0.2) saturate(0.94) contrast(1.03);" fit="cover" radius="8" placeholder="build"></image-slot>
+    </div>
+  </section>
+
+  <!-- ============ FULL-WIDTH: HARBOR ============ -->
+  <figure style="margin: clamp(64px, 8vw, 110px) 0 0; width: 100%;">
+    <image-slot id="wwHarbor" src="uploads/SGMV_by_RB_workingpnbeach2.jpeg" style="width: 100%; height: min(72vh, 720px); filter: sepia(0.2) saturate(0.94) contrast(1.03);" fit="cover" radius="0" placeholder="HARBOR BUILD — full width"></image-slot>
+    <figcaption style="text-align: center; font-family: 'Bitter', serif; font-style: italic; font-size: clamp(16px, 1.6vw, 20px); color: #7A6144; padding: 20px 24px 0;">Built by the water, for the water.</figcaption>
+  </figure>
+
+  <!-- ============ GATHERING BAND + PROGRAMS ============ -->
+  <section style="width: 100%; background: #6E7A31; padding: clamp(72px, 9vw, 120px) 28px; margin-top: clamp(56px, 7vw, 96px);">
+    <div style="max-width: 1120px; margin: 0 auto;">
+      <div style="text-align: center; margin-bottom: clamp(48px, 6vw, 72px);">
+        <div style="font-family: 'Oswald', sans-serif; text-transform: uppercase; letter-spacing: 0.34em; font-weight: 500; font-size: 13px; color: #EBDDB0; margin-bottom: 20px;">The Gathering</div>
+        <h2 style="font-family: 'Yeseva One', serif; font-weight: 400; font-size: clamp(30px, 4.6vw, 54px); line-height: 1.14; color: #FBF3DC; margin: 0 auto; max-width: 16ch;">A season of coming together around the board.</h2>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px;">
+        <div style="background: #F4E8D0; border-radius: 14px; padding: 34px 30px;">
+          <div style="width: 44px; height: 44px; border-radius: 50%; background: radial-gradient(circle at 50% 45%, #E7B84D, #C6592C); margin-bottom: 22px;"></div>
+          <h3 style="font-family: 'Yeseva One', serif; font-weight: 400; font-size: 25px; color: #3A2818; margin: 0 0 12px; line-height: 1.15;">The Zen of Wood, Water &amp; Waves</h3>
+          <p style="font-size: 16px; line-height: 1.65; color: #5C462E; margin: 0;">Waterman conversations on craft, the ocean, and the art of paying attention.</p>
+        </div>
+        <div style="background: #F4E8D0; border-radius: 14px; padding: 34px 30px;">
+          <div style="width: 44px; height: 44px; border-radius: 50%; background: radial-gradient(circle at 50% 45%, #E7B84D, #C6592C); margin-bottom: 22px;"></div>
+          <h3 style="font-family: 'Yeseva One', serif; font-weight: 400; font-size: 25px; color: #3A2818; margin: 0 0 12px; line-height: 1.15;">Yoga &amp; Meditation</h3>
+          <p style="font-size: 16px; line-height: 1.65; color: #5C462E; margin: 0;">Grounding sessions by the harbor — breath, stillness, and salt air before the surf.</p>
+        </div>
+        <div style="background: #F4E8D0; border-radius: 14px; padding: 34px 30px;">
+          <div style="width: 44px; height: 44px; border-radius: 50%; background: radial-gradient(circle at 50% 45%, #E7B84D, #C6592C); margin-bottom: 22px;"></div>
+          <h3 style="font-family: 'Yeseva One', serif; font-weight: 400; font-size: 25px; color: #3A2818; margin: 0 0 12px; line-height: 1.15;">Community Days</h3>
+          <p style="font-size: 16px; line-height: 1.65; color: #5C462E; margin: 0;">Open shop days to watch the board take shape, plane in hand, all summer long.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TWO/THREE-PHOTO + BOARD LINEUP ============ -->
+  <section style="max-width: 1200px; margin: clamp(64px, 8vw, 110px) auto 0; padding: 0 28px; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 18px;">
+    <image-slot id="wwRow2a" src="uploads/IMG_0655.JPG" style="width: 100%; height: 420px; filter: sepia(0.2) saturate(0.94) contrast(1.03);" fit="cover" radius="10" placeholder="BOARD DETAIL"></image-slot>
+    <image-slot id="wwRow2b" src="uploads/IMG_0041.JPG" style="width: 100%; height: 420px; filter: sepia(0.2) saturate(0.94) contrast(1.03);" fit="cover" radius="10" placeholder="BOARD DETAIL"></image-slot>
+    <image-slot id="wwRow2c" src="uploads/blundell_rich_wingdeck_wood.jpg" style="width: 100%; height: 420px; filter: sepia(0.2) saturate(0.94) contrast(1.03);" fit="cover" radius="10" placeholder="BOARD DETAIL"></image-slot>
+  </section>
+  <figure style="margin: clamp(40px, 5vw, 64px) 0 0; width: 100%;">
+    <image-slot id="wwLineup" src="uploads/blundell_rich_happyfamily_wood.jpeg" style="width: 100%; height: min(66vh, 660px); filter: sepia(0.2) saturate(0.94) contrast(1.03);" fit="cover" radius="0" placeholder="BOARD LINEUP — full width"></image-slot>
+    <figcaption style="text-align: center; font-family: 'Bitter', serif; font-style: italic; font-size: clamp(16px, 1.6vw, 20px); color: #7A6144; padding: 20px 24px 0;">Twenty years of boards.</figcaption>
+  </figure>
+
+  <!-- ============ IN THE WATER ============ -->
+  <section style="max-width: 1280px; margin: clamp(64px, 8vw, 110px) auto 0; padding: 0 28px;">
+    <div style="text-align: center; margin-bottom: 34px;">
+      <div style="font-family: 'Oswald', sans-serif; text-transform: uppercase; letter-spacing: 0.34em; font-weight: 500; font-size: 13px; color: #6E7A31; margin-bottom: 14px;">In the Water</div>
+      <h2 style="font-family: 'Yeseva One', serif; font-weight: 400; font-size: clamp(26px, 3.6vw, 42px); line-height: 1.14; color: #3A2818; margin: 0;">Where every board is headed.</h2>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px;">
+      <image-slot id="wwS1" src="uploads/IMG_0069.jpeg" style="width: 100%; height: 300px; filter: sepia(0.2) saturate(0.94) contrast(1.03);" fit="cover" radius="10" placeholder="surf"></image-slot>
+      <image-slot id="wwS2" src="uploads/SGMV_by_RB_Squibknocket_left%20copy.jpg" style="width: 100%; height: 300px; filter: sepia(0.2) saturate(0.94) contrast(1.03);" fit="cover" radius="10" placeholder="surf"></image-slot>
+      <image-slot id="wwS3" src="uploads/SGMV_by_RB_squibbyleft1.jpg" style="width: 100%; height: 300px; filter: sepia(0.2) saturate(0.94) contrast(1.03);" fit="cover" radius="10" placeholder="surf"></image-slot>
+      <image-slot id="wwS4" src="uploads/blundell_rich_wing_wood-4c3a8b0.jpg" style="width: 100%; height: 300px; filter: sepia(0.2) saturate(0.94) contrast(1.03);" fit="cover" radius="10" placeholder="surf"></image-slot>
+    </div>
+  </section>
+
+  <!-- ============ PROJECT DETAILS + MAP ============ -->
+  <section style="max-width: 1120px; margin: clamp(72px, 9vw, 120px) auto 0; padding: 0 28px;">
+    <div style="font-family: 'Oswald', sans-serif; text-transform: uppercase; letter-spacing: 0.34em; font-weight: 500; font-size: 13px; color: #A8431F; margin-bottom: 30px; text-align: center;">Project Details</div>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start;">
+      <div style="display: flex; flex-direction: column; gap: 26px;">
+        <div style="border-top: 2px solid #D9C39A; padding-top: 18px;">
+          <div style="font-family: 'Oswald', sans-serif; text-transform: uppercase; letter-spacing: 0.2em; font-size: 12px; color: #A8431F; margin-bottom: 8px;">What</div>
+          <p style="margin: 0; font-size: 17px; line-height: 1.6; color: #40301F;">A wooden surfboard built in public over one summer, from a single local Nantucket tree.</p>
+        </div>
+        <div style="border-top: 2px solid #D9C39A; padding-top: 18px;">
+          <div style="font-family: 'Oswald', sans-serif; text-transform: uppercase; letter-spacing: 0.2em; font-size: 12px; color: #A8431F; margin-bottom: 8px;">Method</div>
+          <p style="margin: 0; font-size: 17px; line-height: 1.6; color: #40301F;">Strip and Feather — an innovative hollow-wood technique refining the method Rich Blundell pioneered at Grain Surfboards.</p>
+        </div>
+        <div style="border-top: 2px solid #D9C39A; padding-top: 18px;">
+          <div style="font-family: 'Oswald', sans-serif; text-transform: uppercase; letter-spacing: 0.2em; font-size: 12px; color: #A8431F; margin-bottom: 8px;">Where</div>
+          <p style="margin: 0; font-size: 17px; line-height: 1.6; color: #40301F;">Banh Pho Surf Shop, 1 Cambridge St — downtown behind The Gaslight, across from the Nantucket Atheneum.</p>
+        </div>
+        <div style="border-top: 2px solid #D9C39A; padding-top: 18px;">
+          <div style="font-family: 'Oswald', sans-serif; text-transform: uppercase; letter-spacing: 0.2em; font-size: 12px; color: #A8431F; margin-bottom: 8px;">The Board</div>
+          <p style="margin: 0; font-size: 17px; line-height: 1.6; color: #40301F;">Hollow, hand-shaped, and finished by hand — light, strong, and made entirely from the island tree.</p>
+        </div>
+      </div>
+      <div style="padding: 10px; background: repeating-linear-gradient(90deg, #C6592C 0 34px, #D2982E 34px 68px, #6E7A31 68px 102px, #3A2818 102px 136px); border-radius: 14px;">
+        <iframe title="Map to Banh Pho Surf Shop" src="https://maps.google.com/maps?q=1%20Cambridge%20St%2C%20Nantucket%2C%20MA%2002554&t=&z=15&ie=UTF8&iwloc=&output=embed" style="width: 100%; height: 460px; border: 0; border-radius: 8px; display: block; filter: sepia(0.18) saturate(0.95);" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PRESS ============ -->
+  <section style="max-width: 900px; margin: clamp(72px, 9vw, 120px) auto 0; padding: clamp(48px, 6vw, 72px) 40px; background: #EFE0C4; border-radius: 16px; text-align: center;">
+    <div style="font-family: 'Oswald', sans-serif; text-transform: uppercase; letter-spacing: 0.34em; font-weight: 500; font-size: 13px; color: #A8431F; margin-bottom: 20px;">For Editors</div>
+    <h2 style="font-family: 'Yeseva One', serif; font-weight: 400; font-size: clamp(26px, 3.8vw, 42px); line-height: 1.18; color: #3A2818; margin: 0 auto 18px; max-width: 18ch;">A story about craft, place, and slowing down.</h2>
+    <p style="font-size: 17px; line-height: 1.7; color: #5C462E; margin: 0 auto 30px; max-width: 60ch;">Wood, Water &amp; Waves is a summer-long build with strong visuals, a clear cast of characters, and a timeless island setting. High-resolution photography, build footage, and interviews are available for feature stories and social features.</p>
+    <div style="display: flex; flex-wrap: wrap; gap: 12px; justify-content: center;">
+      <a href="mailto:omniscopic@gmail.com?subject=Wood%2C%20Water%20%26%20Waves%20press%20kit" style="font-family: 'Oswald', sans-serif; text-transform: uppercase; letter-spacing: 0.14em; font-size: 14px; font-weight: 500; text-decoration: none; color: #F7ECD2; background: #C6592C; padding: 14px 30px; border-radius: 999px;">Request the press kit</a>
+      <a href="mailto:omniscopic@gmail.com" style="font-family: 'Oswald', sans-serif; text-transform: uppercase; letter-spacing: 0.14em; font-size: 14px; font-weight: 500; text-decoration: none; color: #3A2818; background: transparent; padding: 14px 30px; border-radius: 999px; border: 2px solid #C6A46A;">Arrange a visit</a>
+    </div>
+  </section>
+
+  <!-- ============ FILM & PRESS PDFS ============ -->
+  <section style="width: 100%; background: #3A2818; padding: clamp(72px, 9vw, 120px) 28px; margin-top: clamp(72px, 9vw, 120px);">
+    <div style="max-width: 1120px; margin: 0 auto;">
+      <div style="text-align: center; margin-bottom: clamp(40px, 5vw, 60px);">
+        <div style="font-family: 'Oswald', sans-serif; text-transform: uppercase; letter-spacing: 0.34em; font-weight: 500; font-size: 13px; color: #E39B4A; margin-bottom: 16px;">Watch &amp; Read</div>
+        <h2 style="font-family: 'Yeseva One', serif; font-weight: 400; font-size: clamp(28px, 4.2vw, 50px); line-height: 1.14; color: #F1DBB0; margin: 0 auto; max-width: 18ch;">The film, and twenty years of press.</h2>
+      </div>
+      <div style="padding: 12px; background: repeating-linear-gradient(90deg, #C6592C 0 44px, #D2982E 44px 88px, #6E7A31 88px 132px, #B79A72 132px 176px); border-radius: 16px;">
+        <div style="position: relative; width: 100%; padding-top: 56.25%; border-radius: 9px; overflow: hidden; background: #000;">
+          <iframe src="https://www.youtube.com/embed/7kLV9ZT6Yqo?si=MK9I3KAmqGZzBM1C&rel=0" title="Wood, Water &amp; Waves — the film" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="position: absolute; inset: 0; width: 100%; height: 100%; border: 0;"></iframe>
+        </div>
+      </div>
+      <div style="font-family: 'Oswald', sans-serif; text-transform: uppercase; letter-spacing: 0.28em; font-size: 12px; color: #B79A72; margin: 48px 0 20px; text-align: center;">Press &amp; Previous Builds</div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(262px, 1fr)); gap: 16px;">
+        <div style="position: relative; border-radius: 12px; overflow: hidden; background: #F4E8D0;">
+          <div style="position: relative; height: 230px; overflow: hidden; background: #fff; border-bottom: 3px solid #C6592C;">
+            <img src="uploads/Screenshot%202026-07-04%20at%203.24.03%20PM.png" alt="A Surfer's Guide to the Universe" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: top; border: 0;">
+          </div>
+          <div style="padding: 16px 20px; display: flex; justify-content: space-between; align-items: center; gap: 10px;">
+            <div style="font-family: 'Yeseva One', serif; font-size: 18px; line-height: 1.15; color: #3A2818;">A Surfer's Guide to the Universe</div>
+            <span style="font-family: 'Oswald', sans-serif; text-transform: uppercase; letter-spacing: 0.14em; font-size: 10px; color: #A8431F; white-space: nowrap;">Feature · PDF →</span>
+          </div>
+          <a href="uploads/A%20'Surfer's%20Guide%20to%20the%20Universe'_%20How%20a%20wood.pdf" target="_blank" rel="noopener" aria-label="Open A Surfer's Guide to the Universe (PDF)" style="position: absolute; inset: 0;"></a>
+        </div>
+        <div style="position: relative; border-radius: 12px; overflow: hidden; background: #F4E8D0;">
+          <div style="position: relative; height: 230px; overflow: hidden; background: #fff; border-bottom: 3px solid #C6592C;">
+            <img src="uploads/Screenshot%202026-07-04%20at%203.25.02%20PM.png" alt="Rich Blundell Connects the Cosmos to Art on Cape Cod" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: top; border: 0;">
+          </div>
+          <div style="padding: 16px 20px; display: flex; justify-content: space-between; align-items: center; gap: 10px;">
+            <div style="font-family: 'Yeseva One', serif; font-size: 18px; line-height: 1.15; color: #3A2818;">Connecting the Cosmos to Art</div>
+            <span style="font-family: 'Oswald', sans-serif; text-transform: uppercase; letter-spacing: 0.14em; font-size: 10px; color: #A8431F; white-space: nowrap;">Profile · PDF →</span>
+          </div>
+          <a href="uploads/Rich%20Blundell%20Connects%20the%20Cosmos%20to%20Art%20on%20Ca.pdf" target="_blank" rel="noopener" aria-label="Open Connecting the Cosmos to Art (PDF)" style="position: absolute; inset: 0;"></a>
+        </div>
+        <div style="position: relative; border-radius: 12px; overflow: hidden; background: #F4E8D0;">
+          <div style="position: relative; height: 230px; overflow: hidden; background: #fff; border-bottom: 3px solid #C6592C;">
+            <img src="uploads/Screenshot%202026-07-04%20at%203.24.22%20PM.png" alt="Wooden surfboard makers carve small market niche" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: top; border: 0;">
+          </div>
+          <div style="padding: 16px 20px; display: flex; justify-content: space-between; align-items: center; gap: 10px;">
+            <div style="font-family: 'Yeseva One', serif; font-size: 18px; line-height: 1.15; color: #3A2818;">Star-Bulletin</div>
+            <span style="font-family: 'Oswald', sans-serif; text-transform: uppercase; letter-spacing: 0.14em; font-size: 10px; color: #A8431F; white-space: nowrap;">Newspaper · PDF →</span>
+          </div>
+          <a href="uploads/StarBulletin.pdf" target="_blank" rel="noopener" aria-label="Open Star-Bulletin (PDF)" style="position: absolute; inset: 0;"></a>
+        </div>
+        <div style="position: relative; border-radius: 12px; overflow: hidden; background: #F4E8D0;">
+          <div style="position: relative; height: 230px; overflow: hidden; background: #fff; border-bottom: 3px solid #C6592C;">
+            <img src="uploads/Screenshot%202026-07-04%20at%203.24.39%20PM.png" alt="With the Grain — WoodenBoat" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: top; border: 0;">
+          </div>
+          <div style="padding: 16px 20px; display: flex; justify-content: space-between; align-items: center; gap: 10px;">
+            <div style="font-family: 'Yeseva One', serif; font-size: 18px; line-height: 1.15; color: #3A2818;">WoodenBoat</div>
+            <span style="font-family: 'Oswald', sans-serif; text-transform: uppercase; letter-spacing: 0.14em; font-size: 10px; color: #A8431F; white-space: nowrap;">Magazine · PDF →</span>
+          </div>
+          <a href="uploads/Woodenboat.pdf" target="_blank" rel="noopener" aria-label="Open WoodenBoat (PDF)" style="position: absolute; inset: 0;"></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ BIOS ============ -->
+  <section style="max-width: 1120px; margin: clamp(72px, 9vw, 120px) auto 0; padding: 0 28px; display: grid; grid-template-columns: 1fr 1fr; gap: 40px;">
+    <div style="display: flex; gap: 24px; align-items: flex-start;">
+      <image-slot id="wwBioRich" src="uploads/IMG_3591.JPG" style="width: 120px; min-width: 120px; height: 120px; filter: sepia(0.2) saturate(0.94) contrast(1.03);" shape="circle" placeholder="RICH"></image-slot>
+      <div>
+        <h3 style="font-family: 'Yeseva One', serif; font-weight: 400; font-size: 26px; color: #3A2818; margin: 0 0 4px;">Rich Blundell</h3>
+        <div style="font-family: 'Oswald', sans-serif; text-transform: uppercase; letter-spacing: 0.18em; font-size: 12px; color: #A8431F; margin-bottom: 14px;">Builder &amp; Shaper</div>
+        <p style="font-size: 16px; line-height: 1.65; color: #5C462E; margin: 0;">Co-founder and former chief designer and builder at Grain Surfboards, Rich pioneered hollow-wood surfboard construction and developed the Strip and Feather method. His work bridges craft, ecology, and the wonder of the natural world.</p>
+      </div>
+    </div>
+    <div style="display: flex; gap: 24px; align-items: flex-start;">
+      <image-slot id="wwBioPat" src="uploads/patrick_crop.png" style="width: 120px; min-width: 120px; height: 120px; filter: sepia(0.2) saturate(0.94) contrast(1.03);" shape="circle" placeholder="Photo of Patrick"></image-slot>
+      <div>
+        <h3 style="font-family: 'Yeseva One', serif; font-weight: 400; font-size: 26px; color: #3A2818; margin: 0 0 4px;">Patrick Broemmel</h3>
+        <div style="font-family: 'Oswald', sans-serif; text-transform: uppercase; letter-spacing: 0.18em; font-size: 12px; color: #A8431F; margin-bottom: 14px;">Banh Pho Surf Shop</div>
+        <p style="font-size: 16px; line-height: 1.65; color: #5C462E; margin: 0;">Patrick hosts the build at Banh Pho, his surf shop in downtown Nantucket. A gathering spot for the island's watermen, Banh Pho anchors the season's conversations, community days, and shared salt-water culture.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA ============ -->
+  <section style="width: 100%; background: #C6592C; padding: clamp(80px, 11vw, 150px) 28px; margin-top: clamp(72px, 9vw, 120px); text-align: center;">
+    <sc-if value="{{ showSun }}" hint-placeholder-val="{{ true }}">
+    <div style="width: 76px; height: 76px; border-radius: 50%; margin: 0 auto 28px; background: radial-gradient(circle at 50% 45%, #F4D07A, #E39B4A); box-shadow: 0 0 60px 18px rgba(244,208,122,0.35);"></div>
+    </sc-if>
+    <h2 style="font-family: 'Yeseva One', serif; font-weight: 400; font-size: clamp(40px, 6.5vw, 84px); line-height: 1; color: #F9EDD3; margin: 0 0 20px;">Let's make it.</h2>
+    <p style="font-size: clamp(17px, 1.9vw, 21px); line-height: 1.6; color: #F6E3C4; margin: 0 auto 30px; max-width: 44ch;">Commission the story, join a gathering, or come watch the shavings pile up. The door is open all summer.</p>
+    <a href="mailto:omniscopic@gmail.com" style="font-family: 'Oswald', sans-serif; text-transform: uppercase; letter-spacing: 0.16em; font-size: 15px; font-weight: 500; text-decoration: none; color: #C6592C; background: #F9EDD3; padding: 16px 38px; border-radius: 999px; display: inline-block;">omniscopic@gmail.com</a>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer style="width: 100%; background: #3A2818; padding: clamp(56px, 7vw, 88px) 28px clamp(40px, 5vw, 56px);">
+    <div style="max-width: 1120px; margin: 0 auto;">
+      <div style="font-family: 'Yeseva One', serif; font-size: clamp(24px, 3vw, 34px); color: #F1DBB0; margin-bottom: 6px;">Wood, Water &amp; Waves</div>
+      <div style="font-family: 'Bitter', serif; font-style: italic; font-size: 16px; color: #B79A72; margin-bottom: 36px;">Nantucket · Summer 2026</div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px 32px; border-top: 1px solid #5A4430; padding-top: 30px;">
+        <a href="https://richblundell.com" target="_blank" rel="noopener" style="font-family: 'Oswald', sans-serif; text-transform: uppercase; letter-spacing: 0.12em; font-size: 13px; color: #E7CE9E; text-decoration: none;" style-hover="color: #E39B4A;">richblundell.com</a>
+        <a href="https://oika.com" target="_blank" rel="noopener" style="font-family: 'Oswald', sans-serif; text-transform: uppercase; letter-spacing: 0.12em; font-size: 13px; color: #E7CE9E; text-decoration: none;" style-hover="color: #E39B4A;">oika.com</a>
+        <a href="https://beautifulfutureslab.org" target="_blank" rel="noopener" style="font-family: 'Oswald', sans-serif; text-transform: uppercase; letter-spacing: 0.12em; font-size: 13px; color: #E7CE9E; text-decoration: none;" style-hover="color: #E39B4A;">beautifulfutureslab.org</a>
+        <a href="https://beautifulfutureslab.substack.com" target="_blank" rel="noopener" style="font-family: 'Oswald', sans-serif; text-transform: uppercase; letter-spacing: 0.12em; font-size: 13px; color: #E7CE9E; text-decoration: none;" style-hover="color: #E39B4A;">beautifulfutureslab.substack.com</a>
+        <a href="https://youtube.com/RichBlundell" target="_blank" rel="noopener" style="font-family: 'Oswald', sans-serif; text-transform: uppercase; letter-spacing: 0.12em; font-size: 13px; color: #E7CE9E; text-decoration: none;" style-hover="color: #E39B4A;">youtube.com/RichBlundell</a>
+        <a href="https://banhpho.com" target="_blank" rel="noopener" style="font-family: 'Oswald', sans-serif; text-transform: uppercase; letter-spacing: 0.12em; font-size: 13px; color: #E7CE9E; text-decoration: none;" style-hover="color: #E39B4A;">banhpho.com</a>
+        <a href="https://instagram.com/banhphosurf" target="_blank" rel="noopener" style="font-family: 'Oswald', sans-serif; text-transform: uppercase; letter-spacing: 0.12em; font-size: 13px; color: #E7CE9E; text-decoration: none;" style-hover="color: #E39B4A;">instagram.com/banhphosurf</a>
+      </div>
+      <div style="display: flex; align-items: center; gap: 14px; margin-top: 40px;">
+        <div style="height: 8px; flex: 1; background: repeating-linear-gradient(90deg, #C6592C 0 40px, #D2982E 40px 80px, #6E7A31 80px 120px, #B79A72 120px 160px); border-radius: 999px; opacity: 0.7;"></div>
+      </div>
+      <div style="font-family: 'Bitter', serif; font-size: 13px; color: #8A6E4C; margin-top: 22px;">© 2026 · Built by hand at Banh Pho Surf Shop · omniscopic@gmail.com</div>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{
+  &quot;$preview&quot;: { &quot;width&quot;: &quot;100%&quot;, &quot;height&quot;: 900 },
+  &quot;heroStyle&quot;: {
+    &quot;editor&quot;: &quot;enum&quot;,
+    &quot;options&quot;: [&quot;centered&quot;, &quot;lower&quot;, &quot;framed&quot;],
+    &quot;default&quot;: &quot;lower&quot;,
+    &quot;tsType&quot;: &quot;string&quot;,
+    &quot;section&quot;: &quot;Hero&quot;
+  },
+  &quot;showSun&quot;: {
+    &quot;editor&quot;: &quot;boolean&quot;,
+    &quot;default&quot;: true,
+    &quot;tsType&quot;: &quot;boolean&quot;,
+    &quot;section&quot;: &quot;Decoration&quot;
+  }
+}">
+class Component extends DCLogic {
+  renderVals() {
+    const hero = this.props.heroStyle ?? 'lower';
+    const showSun = this.props.showSun ?? true;
+    return {
+      heroCentered: hero === 'centered',
+      heroLower: hero === 'lower',
+      heroFramed: hero === 'framed',
+      showSun: showSun,
+    };
+  }
+}
+</script>
+</body>
+</html>
