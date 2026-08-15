@@ -47,13 +47,32 @@ the authoring tool the owner uses upstream.
 
 ## Page order
 
-Hero (3 switchable variants) · Intro · Cedar log full-bleed · Poetic band ·
-The Build (text) · Build photo sequences · Frame by Frame gallery wall ·
-In the Water strip · Watch & Read (YouTube embed + 4 press PDF cards) ·
-Project details + Google map · Three community programs · Board lineup ·
-Rich's bio · Patrick's bio · Footer.
+Hero (3 switchable variants) · Intro · Where It Stands (current build status +
+the three new-work photos) · As Told Elsewhere (4 press PDF cards + the YouTube
+film) · Cedar log full-bleed · Poetic band · The Build (text) · Build photo
+sequences · Frame by Frame gallery wall · Harbor full-bleed · Board detail trio +
+lineup · In the Water strip · Project details · For Editors · Rich's bio · CTA ·
+Footer.
 
 Section boundaries are marked with `<!-- ====== NAME ====== -->` comments.
+
+## Current framing (Aug 2026)
+
+The project is no longer connected to **Banh Pho Surf Shop**, and Patrick
+Broemmel is off the page — no shop name, address, map, or `banhpho.com` /
+`instagram.com/banhphosurf` links. Rich builds alone in a small shack on
+Nantucket; the location stays deliberately vague (no street address, no map
+embed). The three community programs (Zen talks, yoga, community days) were cut
+with the shop.
+
+The board is **designed and framed** as of August 2026 and the build is
+underway — `uploads/frames-cut.jpg`, `sunburst-wings.jpg`, `sunburst-fins.jpg`
+are that evidence. Keep the status line in Project Details in step with reality.
+
+The page's job is to introduce the project **and** foreground the press it has
+already earned, to attract more of the same. That is why "As Told Elsewhere"
+sits high, above the visual story, with outlet, byline, and year on every card.
+`uploads/patrick_crop.png` is now unused but left in place.
 
 ## Design tokens (used as literals inline)
 
@@ -93,7 +112,11 @@ Scale
 
 Responsive
 - One breakpoint: **720px**. Below it every multi-column grid collapses to a
-  single column, photo heights shrink, the map drops to 320px.
+  single column and photo heights shrink.
+- There is no global `box-sizing` reset. Any full-width band written as
+  `width: 100%` **plus** horizontal padding must carry `box-sizing: border-box`
+  inline, or it overflows the viewport by twice the padding and its right edge
+  gets clipped by the wrapper's `overflow-x: hidden` on phones.
 
 ## Adding a photo
 
