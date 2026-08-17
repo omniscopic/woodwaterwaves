@@ -47,9 +47,9 @@ the authoring tool the owner uses upstream.
 
 ## Page order
 
-Hero (3 switchable variants) · Intro · Where It Stands (current build status +
-the three new-work photos) · As Told Elsewhere (4 press PDF cards + the YouTube
-film) · Cedar log full-bleed · Poetic band · The Build (text) · Build photo
+Hero (3 switchable variants) · Intro · Progress Report (current build status +
+the eight new-work photos, each captioned) · As Told Elsewhere (4 press PDF
+cards + the YouTube film) · Cedar log full-bleed · Poetic band · The Build (text) · Build photo
 sequences · Frame by Frame gallery wall · Harbor full-bleed · Board detail trio +
 lineup · In the Water strip · Project details · For Editors · Rich's bio · CTA ·
 Footer.
@@ -65,9 +65,13 @@ Nantucket; the location stays deliberately vague (no street address, no map
 embed). The three community programs (Zen talks, yoga, community days) were cut
 with the shop.
 
-The board is **designed and framed** as of August 2026 and the build is
-underway — `uploads/frames-cut.jpg`, `sunburst-wings.jpg`, `sunburst-fins.jpg`
-are that evidence. Keep the status line in Project Details in step with reality.
+The board is a **nine-foot hollow cedar longboard**, designed, framed, and
+assembled as of August 2026 with the build underway. The Progress Report photos
+are that evidence — `uploads/frames-cut.jpg`, `sunburst-wings.jpg`,
+`sunburst-fins.jpg`, `frame-full-length.jpg`, `frame-ribs-spine.jpg`,
+`nose-block.jpg`, `frame-on-plank.jpg`, `cedar-at-the-shack.jpg`. Keep the
+status line in Project Details in step with reality, and give every Progress
+Report photo a caption in the house voice.
 
 The page's job is to introduce the project **and** foreground the press it has
 already earned, to attract more of the same. That is why "As Told Elsewhere"
