@@ -3,6 +3,96 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
+  /* Defer off-screen photos so a phone doesn't download the whole page of
+     images up front. support.js renders the body before anything in <helmet>
+     runs, and it assigns every src before layout settles, so native
+     loading="lazy" can't help — this has to run here in <head>, ahead of
+     support.js, and withhold the src attribute itself. Handing it back later
+     triggers attributeChangedCallback -> _render, and the component's own
+     'load' listener recomputes the cover crop. The hero stays eager. */
+  (function () {
+    var held = [], MARGIN = 800, queued = false, ready = false;
+
+    function release(el) {
+      var src = el.__lazySrc;
+      if (!src) return;
+      el.__lazySrc = null;
+      el.setAttribute('src', src);
+    }
+    function near(el) {
+      var r = el.getBoundingClientRect();
+      if (!r.width && !r.height) return false;               // not laid out yet
+      return r.top < innerHeight + MARGIN && r.bottom > -MARGIN;
+    }
+    function sweep() {
+      queued = false;
+      /* support.js renders the body after this script runs, so early on the
+         document is short and every rect reads near the top — releasing the
+         whole page at once. Wait for a painted frame AND for the real page
+         height to exist. The 500ms poll below retries until both hold. */
+      if (!ready || document.documentElement.scrollHeight < innerHeight * 3) return;
+      var rest = [];
+      for (var i = 0; i < held.length; i++) {
+        var el = held[i];
+        if (!el.__lazySrc) continue;
+        if (!el.isConnected) { rest.push(el); continue; }
+        if (near(el)) release(el); else rest.push(el);
+      }
+      held = rest;
+    }
+    function schedule() { if (!queued) { queued = true; requestAnimationFrame(sweep); } }
+
+    function markReady() { if (!ready) { ready = true; schedule(); } }
+    function afterPaint() { requestAnimationFrame(function () { requestAnimationFrame(markReady); }); }
+    if (document.readyState === 'loading') addEventListener('DOMContentLoaded', afterPaint);
+    else afterPaint();
+    addEventListener('load', markReady);
+
+    addEventListener('scroll', schedule, { passive: true });
+    addEventListener('resize', schedule);
+    addEventListener('load', schedule);
+    addEventListener('DOMContentLoaded', schedule);
+    setInterval(function () { if (held.length) schedule(); }, 500);   // covers late layout
+
+    function hold(el) {
+      if (el.__lazyInit || el.id === 'wwHero') return;
+      var src = el.getAttribute('src');
+      if (!src) return;
+      el.__lazyInit = true;
+      el.__lazySrc = src;
+      el.removeAttribute('src');
+      held.push(el);
+      schedule();
+    }
+
+    function patch(C) {
+      var P = C.prototype;
+      if (P.__lazyPatched) return;
+      P.__lazyPatched = true;
+      var origAttr = P.attributeChangedCallback;
+      P.attributeChangedCallback = function (name) {
+        if (name === 'src') hold(this);
+        return origAttr ? origAttr.apply(this, arguments) : undefined;
+      };
+      var origConn = P.connectedCallback;
+      P.connectedCallback = function () {
+        hold(this); schedule();
+        return origConn ? origConn.apply(this, arguments) : undefined;
+      };
+    }
+
+    var C = customElements.get('image-slot');
+    if (C) patch(C);
+    else {
+      var origDefine = customElements.define.bind(customElements);
+      customElements.define = function (name, ctor, opts) {
+        if (name === 'image-slot') patch(ctor);          // before any element upgrades
+        return origDefine(name, ctor, opts);
+      };
+    }
+  })();
+</script>
 <script src="./support.js"></script>
 </head>
 <body>
@@ -275,7 +365,7 @@
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(262px, 1fr)); gap: 16px;">
         <div style="position: relative; border-radius: 12px; overflow: hidden; background: #F4E8D0;">
           <div style="position: relative; height: 230px; overflow: hidden; background: #fff; border-bottom: 3px solid #C6592C;">
-            <img src="uploads/Screenshot%202026-07-04%20at%203.24.03%20PM.png" alt="A Surfer's Guide to the Universe" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: top; border: 0;">
+            <img loading="lazy" decoding="async" src="uploads/Screenshot%202026-07-04%20at%203.24.03%20PM.jpg" alt="A Surfer's Guide to the Universe" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: top; border: 0;">
           </div>
           <div style="padding: 18px 20px 20px;">
             <div style="font-family: 'Yeseva One', serif; font-size: 19px; line-height: 1.2; color: #3A2818; margin-bottom: 8px;">A ‘Surfer’s Guide to the Universe’</div>
@@ -286,7 +376,7 @@
         </div>
         <div style="position: relative; border-radius: 12px; overflow: hidden; background: #F4E8D0;">
           <div style="position: relative; height: 230px; overflow: hidden; background: #fff; border-bottom: 3px solid #C6592C;">
-            <img src="uploads/Screenshot%202026-07-04%20at%203.25.02%20PM.png" alt="Rich Blundell Connects the Cosmos to Art on Cape Cod" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: top; border: 0;">
+            <img loading="lazy" decoding="async" src="uploads/Screenshot%202026-07-04%20at%203.25.02%20PM.jpg" alt="Rich Blundell Connects the Cosmos to Art on Cape Cod" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: top; border: 0;">
           </div>
           <div style="padding: 18px 20px 20px;">
             <div style="font-family: 'Yeseva One', serif; font-size: 19px; line-height: 1.2; color: #3A2818; margin-bottom: 8px;">Connecting the Cosmos to Art</div>
@@ -297,7 +387,7 @@
         </div>
         <div style="position: relative; border-radius: 12px; overflow: hidden; background: #F4E8D0;">
           <div style="position: relative; height: 230px; overflow: hidden; background: #fff; border-bottom: 3px solid #C6592C;">
-            <img src="uploads/Screenshot%202026-07-04%20at%203.24.22%20PM.png" alt="Wooden surfboard makers carve small market niche" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: top; border: 0;">
+            <img loading="lazy" decoding="async" src="uploads/Screenshot%202026-07-04%20at%203.24.22%20PM.jpg" alt="Wooden surfboard makers carve small market niche" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: top; border: 0;">
           </div>
           <div style="padding: 18px 20px 20px;">
             <div style="font-family: 'Yeseva One', serif; font-size: 19px; line-height: 1.2; color: #3A2818; margin-bottom: 8px;">Wooden surfboard makers carve a niche</div>
@@ -308,7 +398,7 @@
         </div>
         <div style="position: relative; border-radius: 12px; overflow: hidden; background: #F4E8D0;">
           <div style="position: relative; height: 230px; overflow: hidden; background: #fff; border-bottom: 3px solid #C6592C;">
-            <img src="uploads/Screenshot%202026-07-04%20at%203.24.39%20PM.png" alt="With the Grain — WoodenBoat" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: top; border: 0;">
+            <img loading="lazy" decoding="async" src="uploads/Screenshot%202026-07-04%20at%203.24.39%20PM.jpg" alt="With the Grain — WoodenBoat" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: top; border: 0;">
           </div>
           <div style="padding: 18px 20px 20px;">
             <div style="font-family: 'Yeseva One', serif; font-size: 19px; line-height: 1.2; color: #3A2818; margin-bottom: 8px;">With the Grain</div>
@@ -353,7 +443,7 @@
 
   <!-- ============ BUILD GALLERY WALL ============ -->
   <section style="max-width: 1280px; margin: clamp(56px, 7vw, 96px) auto 0; padding: 0 28px;">
-    <img src="uploads/RIchquiver.jpg" alt="Rich with his quiver of wooden surfboards" style="display: block; width: 100%; height: auto; border-radius: 10px; margin-bottom: clamp(28px, 3.4vw, 44px); filter: sepia(0.2) saturate(0.94) contrast(1.03);" />
+    <img loading="lazy" decoding="async" src="uploads/RIchquiver.jpg" alt="Rich with his quiver of wooden surfboards" style="display: block; width: 100%; height: auto; border-radius: 10px; margin-bottom: clamp(28px, 3.4vw, 44px); filter: sepia(0.2) saturate(0.94) contrast(1.03);" />
     <div style="text-align: center; margin-bottom: 34px;">
       <div style="font-family: 'Oswald', sans-serif; text-transform: uppercase; letter-spacing: 0.34em; font-weight: 500; font-size: 13px; color: #A8431F; margin-bottom: 14px;">Frame by Frame</div>
       <h2 style="font-family: 'Yeseva One', serif; font-weight: 400; font-size: clamp(26px, 3.6vw, 42px); line-height: 1.14; color: #3A2818; margin: 0;">A summer of shavings and sawdust.</h2>
