@@ -93,6 +93,14 @@
     }
   })();
 </script>
+<style>
+  /* image-slot.js sets touch-action:none on its <img> so a photo can be dragged
+     to reframe it in the editor. On a phone that means any swipe that starts on
+     a photo is swallowed and the page won't scroll. Hand touch back to the
+     browser for scrolling and pinch-zoom. Reframing uses the separate .spill
+     layer, which keeps its own touch-action:none. */
+  image-slot::part(image) { touch-action: pan-x pan-y pinch-zoom; }
+</style>
 <script src="./support.js"></script>
 </head>
 <body>
