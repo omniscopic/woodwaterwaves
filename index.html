@@ -234,16 +234,10 @@
       </div>
 
 
-      <div class="ww-cols ww-photos" style="display: grid; grid-template-columns: 1fr 1fr; gap: 18px; align-items: start; margin-top: clamp(28px, 3.4vw, 44px);">
-        <figure style="margin: 0;">
-          <image-slot id="wwNow6" src="uploads/frame-ribs-spine.jpg" style="width: 100%; height: 560px; filter: sepia(0.2) saturate(0.94) contrast(1.03);" fit="cover" radius="10" placeholder="RIBS ON SPINE"></image-slot>
-          <figcaption style="font-family: 'Bitter', serif; font-style: italic; font-size: 15px; color: #7A6144; padding: 14px 4px 0;">Spine in, ribs on — the drawing gets up off the paper.</figcaption>
-        </figure>
-        <figure style="margin: 0;">
-          <image-slot id="wwNow8" src="uploads/cedar-at-the-shack.jpg" style="width: 100%; height: 560px; filter: sepia(0.2) saturate(0.94) contrast(1.03);" fit="cover" radius="10" placeholder="CEDAR AT THE SHACK"></image-slot>
-          <figcaption style="font-family: 'Bitter', serif; font-style: italic; font-size: 15px; color: #7A6144; padding: 14px 4px 0;">Island cedar, live edge and all, waiting its turn at the shack door.</figcaption>
-        </figure>
-      </div>
+      <figure style="margin: clamp(28px, 3.4vw, 44px) auto 0; max-width: 560px;">
+        <image-slot id="wwNow8" src="uploads/cedar-at-the-shack.jpg" style="width: 100%; height: 700px; filter: sepia(0.2) saturate(0.94) contrast(1.03);" fit="cover" radius="10" placeholder="CEDAR AT THE SHACK"></image-slot>
+        <figcaption style="font-family: 'Bitter', serif; font-style: italic; font-size: 15px; color: #7A6144; padding: 14px 4px 0;">Island cedar, live edge and all, waiting its turn at the shack door.</figcaption>
+      </figure>
 
       <div class="ww-cols ww-photos" style="display: grid; grid-template-columns: 1fr 1fr; gap: 18px; align-items: start; margin-top: clamp(28px, 3.4vw, 44px);">
         <figure style="margin: 0;">
@@ -450,31 +444,21 @@
     <p style="max-width: 900px; margin: 0 auto; text-align: center; font-family: 'Yeseva One', serif; color: #F1DBB0; font-size: clamp(24px, 3.6vw, 44px); line-height: 1.5;">The soil that fed it. The rain that swelled its grain.<br>The water it will ride. The wave that is older than memory.<br><span style="color: #E39B4A;">One board, made from all of it.</span></p>
   </section>
 
-  <!-- ============ ONE-PHOTO: PLANING ============ -->
-  <section class="ww-photos" style="max-width: 1120px; margin: clamp(64px, 8vw, 110px) auto 0; padding: 0 28px;">
-    <image-slot id="wwPlane" src="uploads/IMG_2886.jpeg" style="width: 100%; height: min(58vh, 520px); filter: sepia(0.2) saturate(0.94) contrast(1.03);" fit="cover" radius="10" placeholder="HAND PLANING"></image-slot>
-  </section>
-
-  <!-- ============ THE BUILD ============ -->
-  <section style="max-width: 760px; margin: 0 auto; padding: clamp(56px, 7vw, 96px) 28px clamp(40px, 5vw, 64px); text-align: center;">
-    <div style="font-family: 'Oswald', sans-serif; text-transform: uppercase; letter-spacing: 0.34em; font-weight: 500; font-size: 13px; color: #6E7A31; margin-bottom: 22px;">The Build</div>
-    <h2 style="font-family: 'Yeseva One', serif; font-weight: 400; font-size: clamp(30px, 4.6vw, 54px); line-height: 1.12; color: #3A2818; margin: 0 0 24px;">Cut, shaped, and finished entirely by hand.</h2>
-    <p style="font-size: clamp(16px, 1.5vw, 19px); line-height: 1.72; color: #5C462E; margin: 0;">No molds, no shortcuts. The log is milled into strips, feathered along their edges for a seamless glue-up, and worked over the frame plank by plank until the hull takes its shape. Nothing here is veneer — the deck and bottom planks are structural, and that is what lets the board be hollow, light, and strong while carrying the whole story of the tree it came from.</p>
-  </section>
-
-  <!-- ============ THREE-PHOTO: FRAME / STRIPS / FIN ============ -->
-  <section class="ww-cols ww-photos" style="max-width: 1200px; margin: 0 auto; padding: 0 28px; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 18px;">
-    <image-slot id="wwFrame" src="uploads/IMG_3227.JPG" style="width: 100%; height: 360px; filter: sepia(0.2) saturate(0.94) contrast(1.03);" fit="cover" radius="10" placeholder="FRAME"></image-slot>
-    <image-slot id="wwClamp" src="uploads/IMG_3228.JPG" style="width: 100%; height: 360px; filter: sepia(0.2) saturate(0.94) contrast(1.03);" fit="cover" radius="10" placeholder="CLAMPED STRIPS"></image-slot>
-    <image-slot id="wwFin" src="uploads/IMG_0752.JPG" style="width: 100%; height: 360px; filter: sepia(0.2) saturate(0.94) contrast(1.03);" fit="cover" radius="10" placeholder="SUNBURST FIN"></image-slot>
-  </section>
-
   <!-- ============ BUILD GALLERY WALL ============ -->
   <section style="max-width: 1280px; margin: clamp(56px, 7vw, 96px) auto 0; padding: 0 28px;">
     <img loading="lazy" decoding="async" src="uploads/RIchquiver.jpg" alt="Rich with his quiver of wooden surfboards" style="display: block; width: 100%; height: auto; border-radius: 10px; margin-bottom: clamp(28px, 3.4vw, 44px); filter: sepia(0.2) saturate(0.94) contrast(1.03);" />
     <div style="text-align: center; margin-bottom: 34px;">
       <div style="font-family: 'Oswald', sans-serif; text-transform: uppercase; letter-spacing: 0.34em; font-weight: 500; font-size: 13px; color: #A8431F; margin-bottom: 14px;">Frame by Frame</div>
-      <h2 style="font-family: 'Yeseva One', serif; font-weight: 400; font-size: clamp(26px, 3.6vw, 42px); line-height: 1.14; color: #3A2818; margin: 0;">Previous builds.</h2>
+      <h2 style="font-family: 'Yeseva One', serif; font-weight: 400; font-size: clamp(26px, 3.6vw, 42px); line-height: 1.14; color: #3A2818; margin: 0 0 22px;">Previous builds.</h2>
+      <p style="max-width: 760px; margin: 0 auto; font-size: clamp(16px, 1.5vw, 19px); line-height: 1.72; color: #5C462E;">No molds, no shortcuts. The log is milled into strips, feathered along their edges for a seamless glue-up, and worked over the frame plank by plank until the hull takes its shape. Nothing here is veneer — the deck and bottom planks are structural, and that is what lets the board be hollow, light, and strong while carrying the whole story of the tree it came from.</p>
+    </div>
+    <div class="ww-photos" style="max-width: 1120px; margin: 0 auto clamp(18px, 2.2vw, 28px);">
+      <image-slot id="wwPlane" src="uploads/IMG_2886.jpeg" style="width: 100%; height: min(58vh, 520px); filter: sepia(0.2) saturate(0.94) contrast(1.03);" fit="cover" radius="10" placeholder="HAND PLANING"></image-slot>
+    </div>
+    <div class="ww-cols ww-photos" style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 18px; margin-bottom: clamp(28px, 3.4vw, 44px);">
+      <image-slot id="wwFrame" src="uploads/IMG_3227.JPG" style="width: 100%; height: 360px; filter: sepia(0.2) saturate(0.94) contrast(1.03);" fit="cover" radius="10" placeholder="FRAME"></image-slot>
+      <image-slot id="wwClamp" src="uploads/IMG_3228.JPG" style="width: 100%; height: 360px; filter: sepia(0.2) saturate(0.94) contrast(1.03);" fit="cover" radius="10" placeholder="CLAMPED STRIPS"></image-slot>
+      <image-slot id="wwFin" src="uploads/IMG_0752.JPG" style="width: 100%; height: 360px; filter: sepia(0.2) saturate(0.94) contrast(1.03);" fit="cover" radius="10" placeholder="SUNBURST FIN"></image-slot>
     </div>
     <div class="ww-photos" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 14px;">
       <image-slot id="wwG1" src="uploads/RichwithWood.jpg" style="width: 100%; height: 220px; filter: sepia(0.2) saturate(0.94) contrast(1.03);" fit="cover" radius="8" placeholder="build"></image-slot>
