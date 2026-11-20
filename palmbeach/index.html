@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rich Blundell Wooden Surfboards</title>
+<meta name="description" content="One-of-a-kind hollow wooden surfboards built from charismatic trees in special places, by Rich Blundell.">
+<meta property="og:title" content="Rich Blundell Wooden Surfboards">
+<meta property="og:description" content="Every board begins as a tree with a story.">
+<meta property="og:image" content="img/hero.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Hanken+Grotesk:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* One visual world: tannin river water and heartwood. Editorial scroll, photos carry the page, mono captions carry provenance. */
+  --tannin:#15120e;
+  --tannin-2:#1f1a14;
+  --paper:#efe7da;
+  --paper-dim:#b8ad9c;
+  --heartwood:#d19a5b;
+  --seaglass:#9cc3b4;
+  --rule:rgba(239,231,218,.14);
+  --display:"Instrument Serif", "Iowan Old Style", Georgia, serif;
+  --body:"Hanken Grotesk", "Helvetica Neue", Arial, sans-serif;
+  --mono:"IBM Plex Mono", ui-monospace, Menlo, monospace;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--tannin);color:var(--paper);font-family:var(--body);font-weight:300;font-size:18px;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:var(--heartwood);text-decoration-thickness:1px;text-underline-offset:3px}
+a:focus-visible,button:focus-visible{outline:2px solid var(--seaglass);outline-offset:3px}
+h1,h2,h3{font-family:var(--display);font-weight:400;text-wrap:balance;margin:0;line-height:1.05}
+.wrap{max-width:1200px;margin:0 auto;padding:0 clamp(16px,4vw,48px)}
+.label{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--seaglass)}
+.measure{max-width:62ch}
+.cap{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--paper-dim)}
+section{padding:clamp(72px,10vw,128px) 0;border-top:1px solid var(--rule)}
+.h2{font-size:clamp(40px,5.4vw,72px)}
+
+/* HERO */
+.hero{padding:clamp(24px,3vw,36px) 0 clamp(56px,8vw,96px)}
+.mast{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;margin-bottom:clamp(32px,5vw,64px)}
+.mast .name{font-family:var(--display);font-size:24px}
+.mast .where{font-family:var(--mono);font-size:12px;letter-spacing:.12em;color:var(--paper-dim)}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:clamp(28px,5vw,72px);align-items:center}
+.hero h1{font-size:clamp(52px,7.6vw,108px);max-width:11ch}
+.hero h1 em{color:var(--heartwood)}
+.hero p.lede{font-size:clamp(19px,1.8vw,22px);max-width:40ch;margin:28px 0 36px}
+.hero figure{margin:0;position:relative}
+.hero figure img{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:50% 40%}
+.hero figcaption{margin-top:10px}
+.ctas{display:flex;gap:14px;flex-wrap:wrap}
+.btn{display:inline-block;padding:14px 22px;border:1px solid var(--heartwood);color:var(--tannin);background:var(--heartwood);font-family:var(--body);font-weight:500;font-size:15px;letter-spacing:.02em;text-decoration:none;border-radius:2px;transition:background .2s,color .2s}
+.btn:hover{background:transparent;color:var(--heartwood)}
+.btn.ghost{background:transparent;color:var(--paper);border-color:var(--rule)}
+.btn.ghost:hover{border-color:var(--paper)}
+
+/* PROVENANCE */
+.intro{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:clamp(24px,5vw,72px);align-items:end;margin-bottom:56px}
+.woods{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
+.wood{background:var(--tannin-2);border:1px solid var(--rule);display:flex;flex-direction:column}
+.wood img{width:100%;aspect-ratio:3/4;object-fit:cover}
+.wood .txt{padding:22px 22px 26px;display:flex;flex-direction:column;gap:10px;flex:1}
+.wood h3{font-size:30px}
+.wood p{margin:0;font-size:16px;color:var(--paper-dim)}
+.wood .tag{font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--heartwood);margin-top:auto;padding-top:8px}
+.pull{font-family:var(--display);font-style:italic;font-size:clamp(28px,3.4vw,44px);line-height:1.2;max-width:28ch;margin:72px 0 0}
+
+/* FILM */
+.film-frame{position:relative;aspect-ratio:16/9;background:#0d0b08;border:1px solid var(--rule);margin-top:36px}
+.film-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.film-link{margin-top:14px}
+
+/* IN PLACE */
+.inplace{display:grid;grid-template-columns:1fr 1fr 1.6fr;gap:20px;margin-top:40px}
+.inplace figure{margin:0}
+.inplace img{width:100%;height:clamp(260px,34vw,460px);object-fit:cover}
+.inplace figcaption{margin-top:10px}
+
+/* MAKER */
+.maker{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(32px,6vw,96px)}
+.maker h2{margin:16px 0 28px}
+.maker-photos{display:grid;grid-template-columns:minmax(0,.8fr);gap:16px;margin-top:36px}
+.maker-photos img{width:100%;aspect-ratio:3/4;object-fit:cover}
+.maker-photos figure{margin:0}
+.maker-photos figcaption{margin-top:8px}
+.facts{list-style:none;margin:0;padding:0;border-top:1px solid var(--rule)}
+.facts li{padding:20px 0;border-bottom:1px solid var(--rule);display:grid;grid-template-columns:120px 1fr;gap:16px}
+.facts .k{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--seaglass);padding-top:4px}
+.facts .v{font-size:17px}
+.places{display:flex;flex-wrap:wrap;gap:8px;margin-top:28px}
+.places span{font-family:var(--mono);font-size:12px;letter-spacing:.06em;border:1px solid var(--rule);padding:6px 10px;color:var(--paper-dim)}
+
+/* PROCESS */
+.process h2{margin:16px 0 20px}
+.steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-top:48px}
+.step{background:var(--tannin-2);border:1px solid var(--rule);display:flex;flex-direction:column}
+.step img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.step .body{padding:22px 24px 28px}
+.step .n{font-family:var(--mono);font-size:12px;color:var(--heartwood);letter-spacing:.1em}
+.step h3{font-size:28px;margin:8px 0 8px}
+.step p{margin:0;font-size:16px;color:var(--paper-dim)}
+.board{margin-top:64px;border:1px solid var(--rule);padding:clamp(20px,3vw,36px);background:var(--tannin-2)}
+.board svg{width:100%;height:auto;display:block}
+.board .bcap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:18px}
+.inventions{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;margin-top:40px}
+.inv h3{font-size:24px;margin-bottom:6px}
+.inv p{margin:0;font-size:15px;color:var(--paper-dim)}
+
+/* PARTNER */
+.partner{background:var(--paper);color:var(--tannin)}
+.partner .label{color:#3d6b5c}
+.partner-grid{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,.7fr);gap:clamp(28px,5vw,72px);align-items:start}
+.partner h2{font-size:clamp(40px,5.6vw,76px);margin:16px 0 24px;max-width:16ch}
+.partner p{max-width:60ch}
+.partner figure{margin:0}
+.partner figure img{width:100%;aspect-ratio:3/4;object-fit:cover}
+.partner .cap{color:#5b5143;margin-top:8px}
+.oika{border-top-color:var(--rule)!important;margin:0!important}
+.oika p{color:var(--paper-dim)!important}
+.offer{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;margin:40px 0;border-top:1px solid rgba(21,18,14,.2);padding-top:28px}
+.offer h3{font-size:26px;margin-bottom:8px}
+.offer p{margin:0;font-size:16px;color:#4b4236}
+.partner .btn{background:var(--tannin);border-color:var(--tannin);color:var(--paper)}
+.partner .btn:hover{background:transparent;color:var(--tannin)}
+.partner .btn.ghost{background:transparent;color:var(--tannin);border-color:rgba(21,18,14,.3)}
+.contact{display:flex;flex-wrap:wrap;gap:10px 28px;margin-top:28px;font-family:var(--mono);font-size:14px}
+.contact a{color:var(--tannin)}
+
+
+/* PRESS */
+.press-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px}
+.press-card{display:flex;flex-direction:column;gap:10px;text-decoration:none;color:var(--paper)}
+.press-card img{width:100%;aspect-ratio:4/3;object-fit:cover;object-position:top;border:1px solid var(--rule);transition:border-color .2s}
+.press-card:hover img{border-color:var(--heartwood)}
+.press-t{font-family:var(--display);font-size:24px;line-height:1.15}
+.press-card .cap{color:var(--heartwood)}
+@media (max-width:980px){.press-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* GALLERY */
+.g-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));grid-auto-rows:170px;grid-auto-flow:dense;gap:10px}
+.g-item{display:block;overflow:hidden;background:var(--tannin-2)}
+.g-item:nth-child(7n+1){grid-column:span 2;grid-row:span 2}
+.g-item img{width:100%;height:100%;object-fit:cover;transition:transform .4s ease,opacity .3s}
+.g-item:hover img{transform:scale(1.04)}
+.lb{position:fixed;inset:0;z-index:50;background:rgba(10,8,6,.94);display:flex;align-items:center;justify-content:center;padding:clamp(12px,4vw,56px)}
+.lb[hidden]{display:none}
+.lb figure{margin:0;max-width:min(1400px,100%);max-height:100%;display:flex;flex-direction:column;align-items:center;gap:12px}
+.lb img{max-width:100%;max-height:calc(100vh - 120px);object-fit:contain}
+.lb figcaption{text-transform:none;letter-spacing:.02em;font-size:13px;text-align:center}
+.lb button{position:absolute;background:none;border:1px solid var(--rule);color:var(--paper);width:48px;height:48px;border-radius:50%;font-size:28px;line-height:1;cursor:pointer}
+.lb button:hover{border-color:var(--paper)}
+.lb-close{top:16px;right:16px}
+.lb-prev{left:16px;top:50%;transform:translateY(-50%)}
+.lb-next{right:16px;top:50%;transform:translateY(-50%)}
+@media (max-width:480px){.g-grid{grid-template-columns:repeat(2,1fr);grid-auto-rows:140px}}
+
+footer{padding:48px 0 64px}
+footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:baseline}
+footer .motto{font-family:var(--display);font-style:italic;font-size:26px}
+footer nav{display:flex;gap:20px;flex-wrap:wrap;font-size:15px}
+footer nav a{color:var(--paper-dim)}
+
+@media (max-width:980px){
+  .woods,.inventions{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .steps{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .offer{grid-template-columns:1fr}
+}
+@media (max-width:760px){
+  .hero-grid,.intro,.maker,.partner-grid{grid-template-columns:1fr}
+  .inplace{grid-template-columns:1fr 1fr}
+  .inplace figure:last-child{grid-column:1 / -1}
+}
+@media (max-width:480px){
+  .woods,.inventions,.steps,.inplace{grid-template-columns:1fr}
+  .facts li{grid-template-columns:1fr;gap:4px}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="mast">
+      <span class="name">Rich Blundell</span>
+      <span class="where">WOODEN SURFBOARDS · NANTUCKET</span>
+    </div>
+    <div class="hero-grid">
+      <div>
+        <h1>Every board begins as a tree with <em>a story.</em></h1>
+        <p class="lede">One-of-a-kind hollow wooden surfboards built from charismatic trees in special places. Functional surfboard sculptures, made to live in a home.</p>
+        <div class="ctas">
+          <a class="btn" href="#partner">Partner with Rich</a>
+          <a class="btn ghost" href="#film">Watch the film</a>
+        </div>
+      </div>
+      <figure>
+        <img src="img/hero.jpg" alt="A glossy red cedar 9 foot longboard standing against a weathered Nantucket shingle wall">
+        <figcaption class="cap">9'0" longboard · Nantucket, 2026</figcaption>
+      </figure>
+    </div>
+  </div>
+</header>
+
+<main>
+<section id="provenance" aria-labelledby="prov-h">
+  <div class="wrap">
+    <div class="intro">
+      <div>
+        <div class="label">The wood</div>
+        <h2 id="prov-h" class="h2">Provenance you can see in the grain</h2>
+      </div>
+      <p class="measure">Rich finds his wood on his travels and adventures. Sometimes he cuts a dead tree and mills it himself with a chainsaw mill strapped to his back. Each board carries the story of the process, the tree, and the place it grew. No two can ever be alike.</p>
+    </div>
+
+    <div class="woods">
+      <article class="wood">
+        <img src="img/island.jpg" alt="Red cedar longboard leaning in the doorway of a Nantucket shed" loading="lazy">
+        <div class="txt">
+          <h3>Island trees</h3>
+          <p>Wood from trees that grew on the island, shaped by salt wind and sandy ground. The latest boards are built from local Nantucket trees.</p>
+          <span class="tag">NANTUCKET, MA</span>
+        </div>
+      </article>
+      <article class="wood">
+        <img src="img/cedar-log.jpg" alt="Cross section of an eastern red cedar log showing its purple heartwood" loading="lazy">
+        <div class="txt">
+          <h3>Historic blowdowns</h3>
+          <p>Trees brought down by storms or age, rescued before they were lost. This eastern red cedar from Truro became a set of boards in 2020.</p>
+          <span class="tag">RESCUED WOOD · TRURO</span>
+        </div>
+      </article>
+      <article class="wood">
+        <img src="https://www.floridamemory.com/fpc/reference/rc17716.jpg" alt="Historic photo of the Wilson Cypress Company dumping cypress logs into the St. Johns River" loading="lazy" style="filter:sepia(.25)">
+        <div class="txt">
+          <h3>River-bottom cypress</h3>
+          <p>Old-growth trees about 1,000 years old that sank to the bottom of Florida rivers more than 100 years ago, taking on distinctive colour palettes and grain patterns. Two boards are being built from it now.</p>
+          <span class="tag">IN THE SHOP NOW</span>
+          <span class="cap" style="text-transform:none;letter-spacing:.02em">Photo: Wilson Cypress Company dumping logs into the St. Johns River, Crows Bluff. State Archives of Florida, Florida Memory.</span>
+        </div>
+      </article>
+      <article class="wood">
+        <img src="img/grain.jpg" alt="Close up of glossy red cedar heartwood with dark knots and flame grain" loading="lazy">
+        <div class="txt">
+          <h3>Rare and figured woods</h3>
+          <p>Old-growth heart pine, western and eastern red cedar, reclaimed barn boards and shipwreck planks. Each chosen for a grain pattern that cannot be repeated.</p>
+          <span class="tag">ONE OF ONE</span>
+        </div>
+      </article>
+    </div>
+
+    <p class="pull">A thousand years of growth, a century under the river, and now a wave.</p>
+  </div>
+</section>
+
+<section id="film" aria-labelledby="film-h">
+  <div class="wrap">
+    <div class="label">The film</div>
+    <h2 id="film-h" style="font-size:clamp(36px,4.6vw,60px);margin-top:16px">Meet the maker</h2>
+    <div class="film-frame">
+      <iframe src="https://www.youtube-nocookie.com/embed/qGKEyjHKRjo?rel=0" title="Rich Blundell wooden surfboards film" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen loading="lazy"></iframe>
+    </div>
+    <p class="film-link cap"><a href="https://www.youtube.com/watch?v=qGKEyjHKRjo">Watch on YouTube</a></p>
+
+    <div class="inplace">
+      <figure><img src="img/home-white.jpg" alt="Three wooden surfboards hung on a white wall in a bright living room" loading="lazy"><figcaption class="cap">At home on the wall</figcaption></figure>
+      <figure><img src="img/home-clock.jpg" alt="Striped wooden surfboard on a stand beside a grandfather clock" loading="lazy"><figcaption class="cap">On a custom stand</figcaption></figure>
+      <figure><img src="img/surfing.jpg" alt="Rich riding a wave on one of his wooden boards, seen from the nose" loading="lazy"><figcaption class="cap">And in the water. Every board surfs.</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="maker" aria-labelledby="maker-h">
+  <div class="wrap maker">
+    <div>
+      <div class="label">The maker</div>
+      <h2 id="maker-h" class="h2">A pioneer of the hollow wooden surfboard</h2>
+      <p class="measure">Rich Blundell has been designing and building hollow wooden surfboards since the early 2000s. His early boards were covered by the Associated Press and WoodenBoat. Today he is a natural historian and public thinker whose work on the story of life on Earth shapes every board he makes.</p>
+      <p class="measure">Rich is based on Nantucket and travels the world finding interesting places and charismatic trees. He builds in residence in each place, working with its trees and waters, so every board belongs to somewhere.</p>
+      <div class="label" style="margin-top:28px">Upcoming residencies</div>
+      <div class="places" aria-label="Upcoming residencies" style="margin-top:12px">
+        <span>FLORIDA · THIS WINTER</span>
+        <span>NANTUCKET · NEXT SUMMER</span>
+        <span>DUXBURY · HOMETOWN</span>
+        <span>TRURO · CAPE COD</span>
+      </div>
+      <div class="maker-photos">
+        <figure><img src="img/maker.jpg" alt="Rich standing beside his finished red cedar longboard at his Nantucket shed" loading="lazy"><figcaption class="cap">Nantucket, 2026</figcaption></figure>
+      </div>
+    </div>
+    <ul class="facts">
+      <li><span class="k">Pioneer</span><span class="v">Designer and builder of hollow wooden surfboards for more than two decades.</span></li>
+      <li><span class="k">Scientist</span><span class="v">Naturalist-in-residence at the Maria Mitchell Association on Nantucket.</span></li>
+      <li><span class="k">Thinker</span><span class="v">Doctorate in Big History under David Christian at Macquarie University. Founder of Oika and the Beautiful Futures Lab.</span></li>
+      <li><span class="k">Public figure</span><span class="v">Speaker, filmmaker and writer, on <a href="https://www.youtube.com/@RichBlundell?sub_confirmation=1">YouTube</a> and <a href="https://beautifulfutureslab.substack.com/">Substack</a>.</span></li>
+      <li><span class="k">In print</span><span class="v">Feature story in Nantucket Magazine, spring 2027.</span></li>
+    </ul>
+  </div>
+</section>
+
+<section id="press" aria-labelledby="press-h">
+  <div class="wrap">
+    <div class="intro">
+      <div>
+        <div class="label">Press</div>
+        <h2 id="press-h" class="h2">Twenty years of press</h2>
+      </div>
+      <p class="measure">Features and profiles on Rich's boards and ideas, from the early hollow wooden boards to today.</p>
+    </div>
+    <div class="press-grid">
+      <a class="press-card" href="../uploads/A%20'Surfer's%20Guide%20to%20the%20Universe'_%20How%20a%20wood.pdf" target="_blank" rel="noopener">
+        <img src="img/press/surfers-guide.jpg" alt="Clipping: A Surfer's Guide to the Universe" loading="lazy">
+        <span class="press-t">A Surfer's Guide to the Universe</span>
+        <span class="cap">Feature · PDF →</span>
+      </a>
+      <a class="press-card" href="../uploads/Rich%20Blundell%20Connects%20the%20Cosmos%20to%20Art%20on%20Ca.pdf" target="_blank" rel="noopener">
+        <img src="img/press/cosmos.jpg" alt="Clipping: Connecting the Cosmos to Art" loading="lazy">
+        <span class="press-t">Connecting the Cosmos to Art</span>
+        <span class="cap">Profile · PDF →</span>
+      </a>
+      <a class="press-card" href="../uploads/StarBulletin.pdf" target="_blank" rel="noopener">
+        <img src="img/press/star-bulletin.jpg" alt="Clipping: Star-Bulletin" loading="lazy">
+        <span class="press-t">Star-Bulletin</span>
+        <span class="cap">Newspaper · PDF →</span>
+      </a>
+      <a class="press-card" href="../uploads/Woodenboat.pdf" target="_blank" rel="noopener">
+        <img src="img/press/woodenboat.jpg" alt="Clipping: WoodenBoat" loading="lazy">
+        <span class="press-t">WoodenBoat</span>
+        <span class="cap">Magazine · PDF →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section id="oika" aria-labelledby="oika-h">
+  <div class="wrap">
+    <div class="intro">
+      <div>
+        <div class="label">The philosophy</div>
+        <h2 id="oika-h" class="h2">Oika</h2>
+      </div>
+      <p class="measure">A deep philosophy runs through the whole ecological life of each board. Rich expresses it through a word he coined, <em>Oika</em>, which names a triad of ideas: continuity, relationality and entanglement.</p>
+    </div>
+    <div class="offer oika">
+      <div><h3>Continuity</h3><p>The life of the tree does not end when it falls. It carries on, through the mill and the shop, into the board and onto the wave.</p></div>
+      <div><h3>Relationality</h3><p>A board is made of relationships: between a tree and the place it grew, the maker and the grain, the board and the water.</p></div>
+      <div><h3>Entanglement</h3><p>Tree, place, maker, wave and owner become part of one story that cannot be pulled apart.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="process" class="process" aria-labelledby="proc-h">
+  <div class="wrap">
+    <div class="label">The process</div>
+    <h2 id="proc-h" class="h2">Wood, water and waves</h2>
+    <p class="measure">Rich treats a board as a meeting between a tree and the ocean. He reads where the tree grew, how it fell and what the grain wants to do, then builds a hollow frame light and strong enough to surf. The method and its joinery are his own inventions.</p>
+
+    <div class="steps">
+      <div class="step"><img src="img/mill.jpg" alt="Freshly milled red cedar boards beside a chainsaw and log" loading="lazy"><div class="body"><div class="n">01</div><h3>Find and mill the tree</h3><p>On island ground, after a storm, or at the bottom of a river. Milled on site, often with a chainsaw mill carried in on his back.</p></div></div>
+      <div class="step"><img src="img/plane.jpg" alt="Rich hand planing strips of red cedar in his shop" loading="lazy"><div class="body"><div class="n">02</div><h3>Plane and bookmatch</h3><p>The boards are dried, planed by hand and bookmatched so the grain mirrors down the centre of the deck.</p></div></div>
+      <div class="step"><img src="img/frame.jpg" alt="The laser cut internal frame of ribs and stringer with triangular truss voids" loading="lazy"><div class="body"><div class="n">03</div><h3>Build it hollow</h3><p>A precise skeleton of ribs and stringer, trussed to be light and stiff. Glue only, no fasteners.</p></div></div>
+      <div class="step"><img src="img/tail.jpg" alt="Close up of the tail of a red cedar board showing the laminated rail" loading="lazy"><div class="body"><div class="n">04</div><h3>Shape the rails by hand</h3><p>The rail is laid up course by course, then planed and sanded into one fair curve, guided by hand-made gauges.</p></div></div>
+      <div class="step"><img src="img/fin.jpg" alt="A laminated wooden Rising Sun fin held up in the sunlight" loading="lazy"><div class="body"><div class="n">05</div><h3>Make the fin</h3><p>Each board gets a fin of Rich's own Rising Sun design, laminated from contrasting woods.</p></div></div>
+      <div class="step"><img src="img/trio.jpg" alt="Three finished boards leaning against shingles, one glossy red cedar" loading="lazy"><div class="body"><div class="n">06</div><h3>Finish to glass</h3><p>No fiberglass cloth. A deep, glassy high-gloss finish that lets the grain show. Custom mounting for display.</p></div></div>
+    </div>
+
+    <figure class="board">
+      <svg viewBox="0 0 1080 260" role="img" aria-label="Plan outline of the 9 foot Integrated Rail Band board with its internal ribs">
+        <defs>
+          <clipPath id="outline"><path id="op" d="M20 130 C 40 34, 260 20, 560 20 C 860 20, 1010 60, 1062 130 C 1010 200, 860 240, 560 240 C 260 240, 40 226, 20 130 Z"/></clipPath>
+        </defs>
+        <g clip-path="url(#outline)" id="ribs"></g>
+        <use href="#op" fill="none" stroke="#d19a5b" stroke-width="2"/>
+        <line x1="20" y1="130" x2="1062" y2="130" stroke="#9cc3b4" stroke-width="1.5" stroke-dasharray="2 6"/>
+      </svg>
+      <figcaption class="bcap cap"><span>9'0" Integrated Rail Band · 108" × 22" × 3"</span><span>24 ribs · 7 rail courses · hollow</span></figcaption>
+    </figure>
+
+    <div class="inventions">
+      <div class="inv"><h3>Integrated Rail Band</h3><p>A hollow frame whose rail band locks into slotted rib ends. Rich's current method.</p></div>
+      <div class="inv"><h3>Triplicate Truss</h3><p>The Blundell Triplicate Truss: a web of three rounded voids per bay that keeps the frame light and stiff.</p></div>
+      <div class="inv"><h3>The Groovy Joint</h3><p>Rich's puzzle-tab splice. It fits so tight the joint clamps itself.</p></div>
+      <div class="inv"><h3>Rising Sun fin</h3><p>A fin shape of Rich's own design, scaled to each board.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="gallery" aria-labelledby="gal-h">
+  <div class="wrap">
+    <div class="intro">
+      <div>
+        <div class="label">Gallery</div>
+        <h2 id="gal-h" class="h2">Twenty years of boards</h2>
+      </div>
+      <p class="measure">Builds, trees, shops and waves from Cape Cod, Martha's Vineyard, Key West and beyond. Click any photo to see it larger.</p>
+    </div>
+    <div class="g-grid">
+      <a class="g-item" href="img/gallery/g01.jpg" data-i="0"><img src="img/gallery/g01-t.jpg" alt="Rising Sun fin on a wooden board at the beach at sunrise" loading="lazy"></a>
+      <a class="g-item" href="img/gallery/g02.jpg" data-i="1"><img src="img/gallery/g02-t.jpg" alt="A glossy wooden board with fin glowing in the shop light" loading="lazy"></a>
+      <a class="g-item" href="img/gallery/g03.jpg" data-i="2"><img src="img/gallery/g03-t.jpg" alt="Rich lying among his quiver of wooden surfboards on the grass" loading="lazy"></a>
+      <a class="g-item" href="img/gallery/g04.jpg" data-i="3"><img src="img/gallery/g04-t.jpg" alt="Rich riding a barrel on a wooden board" loading="lazy"></a>
+      <a class="g-item" href="img/gallery/g05.jpg" data-i="4"><img src="img/gallery/g05-t.jpg" alt="The Wing, a striped wooden longboard, held upright among trees" loading="lazy"></a>
+      <a class="g-item" href="img/gallery/g06.jpg" data-i="5"><img src="img/gallery/g06-t.jpg" alt="Rich holding a freshly milled red cedar plank" loading="lazy"></a>
+      <a class="g-item" href="img/gallery/g07.jpg" data-i="6"><img src="img/gallery/g07-t.jpg" alt="A milled red cedar plank with knots, held in hand" loading="lazy"></a>
+      <a class="g-item" href="img/gallery/g08.jpg" data-i="7"><img src="img/gallery/g08-t.jpg" alt="Rich hand planing cedar strips in the shop" loading="lazy"></a>
+      <a class="g-item" href="img/gallery/g09.jpg" data-i="8"><img src="img/gallery/g09-t.jpg" alt="Rich holding up a round cedar panel outdoors" loading="lazy"></a>
+      <a class="g-item" href="img/gallery/g10.jpg" data-i="9"><img src="img/gallery/g10-t.jpg" alt="Rich laying red cedar deck strips on a weathered log" loading="lazy"></a>
+      <a class="g-item" href="img/gallery/g11.jpg" data-i="10"><img src="img/gallery/g11-t.jpg" alt="Rich working on a cedar board in a bright shop" loading="lazy"></a>
+      <a class="g-item" href="img/gallery/g12.jpg" data-i="11"><img src="img/gallery/g12-t.jpg" alt="The hollow frame of a board with hand tools" loading="lazy"></a>
+      <a class="g-item" href="img/gallery/g13.jpg" data-i="12"><img src="img/gallery/g13-t.jpg" alt="Board frame clamped up on the bench" loading="lazy"></a>
+      <a class="g-item" href="img/gallery/g14.jpg" data-i="13"><img src="img/gallery/g14-t.jpg" alt="Rich with a wooden board on a seawall by the beach" loading="lazy"></a>
+      <a class="g-item" href="img/gallery/g15.jpg" data-i="14"><img src="img/gallery/g15-t.jpg" alt="The tail and fin of the Wing longboard" loading="lazy"></a>
+      <a class="g-item" href="img/gallery/g16.jpg" data-i="15"><img src="img/gallery/g16-t.jpg" alt="Rich building a board under an outdoor shed" loading="lazy"></a>
+      <a class="g-item" href="img/gallery/g17.jpg" data-i="16"><img src="img/gallery/g17-t.jpg" alt="Hand plane and curled shavings on a board deck" loading="lazy"></a>
+      <a class="g-item" href="img/gallery/g18.jpg" data-i="17"><img src="img/gallery/g18-t.jpg" alt="Rich planing a board in a Martha's Vineyard boatyard shop" loading="lazy"></a>
+      <a class="g-item" href="img/gallery/g19.jpg" data-i="18"><img src="img/gallery/g19-t.jpg" alt="Rich sanding a board in the boatyard shop" loading="lazy"></a>
+      <a class="g-item" href="img/gallery/g20.jpg" data-i="19"><img src="img/gallery/g20-t.jpg" alt="Rich working on a board at the harbor on Martha's Vineyard" loading="lazy"></a>
+      <a class="g-item" href="img/gallery/g21.jpg" data-i="20"><img src="img/gallery/g21-t.jpg" alt="Rich surfing a wooden board at Squibnocket" loading="lazy"></a>
+      <a class="g-item" href="img/gallery/g22.jpg" data-i="21"><img src="img/gallery/g22-t.jpg" alt="Rich fitting the frame of a hollow board" loading="lazy"></a>
+      <a class="g-item" href="img/gallery/g23.jpg" data-i="22"><img src="img/gallery/g23-t.jpg" alt="A wooden board on display in a Key West surf shop" loading="lazy"></a>
+      <a class="g-item" href="img/gallery/g24.jpg" data-i="23"><img src="img/gallery/g24-t.jpg" alt="Rich with a set of rails on the bench in his garage" loading="lazy"></a>
+      <a class="g-item" href="img/gallery/g25.jpg" data-i="24"><img src="img/gallery/g25-t.jpg" alt="Rich with a lineup of his wooden boards" loading="lazy"></a>
+      <a class="g-item" href="img/gallery/g26.jpg" data-i="25"><img src="img/gallery/g26-t.jpg" alt="Rich surfing, seen from the nose of his wooden board" loading="lazy"></a>
+    </div>
+  </div>
+</section>
+
+<div id="lightbox" class="lb" hidden role="dialog" aria-modal="true" aria-label="Photo viewer">
+  <button class="lb-close" aria-label="Close">×</button>
+  <button class="lb-prev" aria-label="Previous photo">‹</button>
+  <figure><img id="lb-img" alt=""><figcaption id="lb-cap" class="cap"></figcaption></figure>
+  <button class="lb-next" aria-label="Next photo">›</button>
+</div>
+
+<section id="partner" class="partner" aria-labelledby="part-h">
+  <div class="wrap partner-grid">
+    <div>
+      <div class="label">Partnerships</div>
+      <h2 id="part-h">Now partnering with interior designers and gallerists</h2>
+      <p>Rich's boards will be shown in Palm Beach this winter. He is establishing partnerships with a select group of interior designers and gallerists, and works directly with clients to create their perfect board, from the choice of tree to the way it hangs on the wall.</p>
+      <div class="offer">
+        <div><h3>Commissions</h3><p>A board built for one client and one room, with its wood and its story chosen together.</p></div>
+        <div><h3>Finished pieces</h3><p>Available boards for placement in client homes, showrooms and galleries.</p></div>
+        <div><h3>Mounting</h3><p>Wallhangers by default, with custom mounting designed for the space.</p></div>
+      </div>
+      <div class="ctas">
+        <a class="btn" href="mailto:omniscopic@gmail.com?subject=Partnering%20on%20wooden%20surfboards">Start a conversation</a>
+        <a class="btn ghost" href="https://omniscopic.github.io/woodwaterwaves/">See the Wood, Water &amp; Waves archive</a>
+      </div>
+      <div class="contact">
+        <span>omniscopic@gmail.com</span>
+        <span>617 380 8745</span>
+        <a href="http://www.richblundell.com/">RichBlundell.com</a>
+      </div>
+    </div>
+    <figure>
+      <img src="img/gallery.jpg" alt="Rich with his longboard on display in a Nantucket gallery" loading="lazy">
+      <figcaption class="cap">C+C Gallery, Nantucket</figcaption>
+    </figure>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span class="motto">The future is beautiful. Or there isn't one.</span>
+    <nav aria-label="Links">
+      <a href="http://www.richblundell.com/">RichBlundell.com</a>
+      <a href="https://www.youtube.com/@RichBlundell?sub_confirmation=1">YouTube</a>
+      <a href="https://beautifulfutureslab.substack.com/">Substack</a>
+      <a href="http://www.oika.com/">Oika.com</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+(function(){
+  // ribs on the board drawing: 24 ribs at 4" o.c., stations 8"–100" of 108"
+  var g=document.getElementById('ribs'), ns='http://www.w3.org/2000/svg';
+  for(var n=1;n<=24;n++){var st=4*n+4, x=20+(st/108)*1042;
+    var l=document.createElementNS(ns,'line');
+    l.setAttribute('x1',x);l.setAttribute('x2',x);l.setAttribute('y1',0);l.setAttribute('y2',260);
+    l.setAttribute('stroke','rgba(239,231,218,.35)');l.setAttribute('stroke-width','1.2');g.appendChild(l);}
+})();
+
+(function(){
+  var items=[].slice.call(document.querySelectorAll('.g-item')), lb=document.getElementById('lightbox'),
+      img=document.getElementById('lb-img'), cap=document.getElementById('lb-cap'), cur=0, last=null;
+  function show(i){cur=(i+items.length)%items.length;var a=items[cur],t=a.querySelector('img');
+    img.src=a.getAttribute('href');img.alt=t.alt;cap.textContent=(cur+1)+' / '+items.length;}
+  function open(i){last=document.activeElement;show(i);lb.hidden=false;document.body.style.overflow='hidden';lb.querySelector('.lb-close').focus();}
+  function close(){lb.hidden=true;document.body.style.overflow='';if(last)last.focus();}
+  items.forEach(function(a,i){a.addEventListener('click',function(e){e.preventDefault();open(i);});});
+  lb.querySelector('.lb-close').addEventListener('click',close);
+  lb.querySelector('.lb-prev').addEventListener('click',function(){show(cur-1)});
+  lb.querySelector('.lb-next').addEventListener('click',function(){show(cur+1)});
+  lb.addEventListener('click',function(e){if(e.target===lb)close();});
+  document.addEventListener('keydown',function(e){if(lb.hidden)return;
+    if(e.key==='Escape')close();else if(e.key==='ArrowLeft')show(cur-1);else if(e.key==='ArrowRight')show(cur+1);});
+  var x0=null;lb.addEventListener('touchstart',function(e){x0=e.touches[0].clientX},{passive:true});
+  lb.addEventListener('touchend',function(e){if(x0===null)return;var dx=e.changedTouches[0].clientX-x0;if(Math.abs(dx)>40)show(cur+(dx<0?1:-1));x0=null;});
+})();
+</script>
+</body>
+</html>
